@@ -11,6 +11,7 @@
     :key="index"
     :title="item.title"
     :index="index"
+    :time="item.time"
     @item-click="itemClick"
     v-show="isShow"/>
     <router-view></router-view>

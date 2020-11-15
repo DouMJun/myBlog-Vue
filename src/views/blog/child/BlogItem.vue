@@ -2,6 +2,7 @@
   <div class="blog-item" @click="clickItem">
     <div class="title">{{ title }}</div>
     <div class="content">{{ content }}</div>
+    <div class="time">{{ updateTime }}</div>
     
   </div>
 </template>
@@ -18,11 +19,17 @@ export default {
         return -1;
       }
     },
-    content:''
+    content:'',
+    time: {},
   },
   methods: {
     clickItem() {
       this.$emit('item-click', this.index)
+    }
+  },
+  computed: {
+    updateTime() {
+      return 'updated: '+this.time.year +'-'+ this.time.month + '-' + this.time.day + '-' + this.time.hour
     }
   }
 }
@@ -37,5 +44,13 @@ export default {
     margin: 5px 0;
     border-radius: 10px;
     padding: 10px;
+    position: relative;
+  }
+
+  .time {
+    font-size:0.8em;
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
   }
 </style>

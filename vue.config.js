@@ -5,6 +5,7 @@ function resolve(dir) {
 }
 module.exports = {
   lintOnSave: true,
+  publicPath: "./",
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('src'))
@@ -22,11 +23,5 @@ module.exports = {
       .use('./markdownLoader')
       .loader('./markdownLoader')
       .end()
-      // .use('html-loader')
-      // .loader('html-loader')
-      // .end()
-      // .use('markdown-loader')
-      // .loader('markdown-loader')
-      // .end()
-  }
+  },
 };

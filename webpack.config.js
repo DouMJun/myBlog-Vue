@@ -6,6 +6,7 @@ return {
     // node: {
     //   fs:'empty'
     // },
+    publicPath: './',
     rules: [{
       test: /\.md$/,
       use: [
