@@ -1,19 +1,5 @@
-# myblog
+# 从零开始的博客搭建
 
-## Project setup
-```
-npm install
-```
+本项目是一个使用Vue全家桶开发的个人博客
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+开发过程中的问题请访问[我的博客](https://doumjun.github.io/vuepress.blog/)

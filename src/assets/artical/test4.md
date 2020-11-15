@@ -8,4 +8,7 @@
 - 12345
 - money
 
-~delete~
+*delete*
+`Object`
+- `object`
+- ~~delate~~

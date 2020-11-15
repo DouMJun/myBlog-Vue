@@ -38,15 +38,18 @@ export default {
 
 <style scoped>
   .blog-item {
-    height: 100px;
+    height: 160px;
     color: white;
     background-color: rgba(87, 167, 187, .8);
-    margin: 5px 0;
+    margin: 20px 0;
     border-radius: 10px;
     padding: 10px;
     position: relative;
   }
-
+  .title{
+    margin:10px 0 0 10px;
+    font-size: 1.5em;
+  }
   .time {
     font-size:0.8em;
     position: absolute;
