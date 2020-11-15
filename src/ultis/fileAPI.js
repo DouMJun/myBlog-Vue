@@ -1,10 +1,15 @@
 const files = require.context('@assets/artical/', false, /\.md$/)
-const test = require('@assets/artical/')
+import Time from "@assets/time.js"
 
+
+const test = require('@assets/artical/')
+// const fileTime = Array.from(Time)
 const componentLists = []
 const children = []
 const pathLists = []
 const articalLists = []
+
+console.log( Time)
 files.keys().forEach((item, index) => {
   let routeItem = {}
   let articalInfo = {}
