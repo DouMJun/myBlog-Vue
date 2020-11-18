@@ -51,7 +51,6 @@ function getTitle(html) {
   }else{
     return ''
   }
-
 }
 module.exports = function(src) {
 
