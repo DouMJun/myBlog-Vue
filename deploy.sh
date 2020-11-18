@@ -10,7 +10,7 @@ git add -A
 git commit -m 'deploy'
 
 # 获取更新后的时间
-node getTime.js
+# node getTime.js
 
 
 git add -A
