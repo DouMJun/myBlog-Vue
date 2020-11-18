@@ -20,5 +20,3 @@ git commit -m 'deploy'
 # https://doumjun.github.io/vuepress.blog/
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:DouMJun/myBlog-Vue.git master
-
-cd -
