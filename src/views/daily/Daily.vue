@@ -1,19 +1,35 @@
 <template>
   <div class="daily">
-    Daily
+    <Artical :path="'/daily/'"
+    :articalLists="artical"
+    >
+    </Artical>
   </div>
 </template>
 
 <script>
+import Artical from '@components/Artical'
+
+import {articalLists} from '@/ultis/fileAPI'
+
 export default {
-  name: 'Daily'
+  name: 'Daily',
+  components: {
+    Artical
+  },
+  data() {
+    return {
+      artical: articalLists
+    }
+  },
+  methods: {
+    
+  },
+  computed: {
+  }
 }
 </script>
 
 <style scoped>
-  .daily {
-    width: 300px;
-    height: 300px;
-    background-color: black;
-  }
+  
 </style>

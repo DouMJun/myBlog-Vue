@@ -11,14 +11,11 @@ pre.hljs {
   color: white;
   position: relative;
 
-  /* font-size: 1em; */
   padding: 0.3em 1em;
   padding-top: 0.4em;
-  /* box-shadow: 0px 4px 9px grey;*/
   padding: .5em;
 
 
-  /* border: 1px solid #ccc; */
   border-radius: 5px;
   margin-left: 0.2em;
   margin-right: 0.2em;
@@ -27,14 +24,13 @@ pre.hljs {
 }
 pre.hljs code ol li {
   color: white;
-  font-family: "Monaco";
+  font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
   list-style: decimal-leading-zero;
   position: relative;
   padding-left: 10px;
 
   line-height: 1.5em;
 
-  letter-spacing: 0.1em;
 
 }
 
@@ -77,6 +73,7 @@ pre.hljs  b.name {
   text-align: left;
   letter-spacing: 0px;
   font-family: "Fira Code","PingFang SC", "Microsoft YaHei", sans-serif;
+  min-height: 25em;
 }
 
 /*段落*/
@@ -158,9 +155,14 @@ pre.hljs  b.name {
 #write ol {
   list-style-type: decimal;
 }
+
+#write li {
+  line-height: 1.7em;
+}
 /* 列表内容 */
 #write li section {
   font-size:15px;
+
 }
 
 /* 字体加粗 */
@@ -220,6 +222,10 @@ pre.hljs  b.name {
   border-radius: 4px;
   margin: 0 2px;
   word-break: break-all;
+}
+
+pre.hljs>code {
+  background-color: transparent!important;
 }
 
 /* 文章插图 */

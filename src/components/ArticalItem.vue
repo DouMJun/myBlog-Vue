@@ -20,7 +20,7 @@ export default {
       }
     },
     content:'',
-    time: {},
+    time: '',
   },
   methods: {
     clickItem() {
@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     updateTime() {
-      return 'updated: '+this.time.year +'-'+ this.time.month + '-' + this.time.day + '-' + this.time.hour
+      return 'updated: '+this.time.replace(/T/, ' ').slice(0, -5)
     }
   }
 }

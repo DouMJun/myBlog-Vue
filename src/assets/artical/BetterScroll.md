@@ -4,13 +4,10 @@
 
 封装模板：  
 ```JavaScript
-<template>
-  <div class="wrapper" ref="wrapper">
-    <div class="content">
-      <slot></slot>
-    </div>
-  </div>
-</template>
+
+ 
+
+
 ```
 使用参考[官方文档](https://better-scroll.github.io/docs/zh-CN/guide/)
 

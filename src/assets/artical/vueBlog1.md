@@ -28,22 +28,23 @@
 markdownLoader的简单实现，相关的样式我修改了一个喜欢的Typora主题拿来用了。
 ```javascript
 
-const MarkdownIt = require('markdown-it')
-const md = new MarkdownIt()
-module.exports = function(src) {
+// const MarkdownIt = require('markdown-it')
+// const md = new MarkdownIt()
+// module.exports = function(src) {
+//   const html = md.render(`${src}`)
+//   const title = getTitle(html);
+//   return (
+//     `<template>\n
+//       <div id="write">
+//         ${html}
+//       </div>\n
+//     </template>\n
+//     `
+//   )
+// }
 
-  const html = md.render(`${src}`)
-  const title = getTitle(html);
-  return (
-    `<template>\n
-      <div id="write">
-        ${html}
-      </div>\n
-    </template>\n
-    `
-  )
-}
 ```
+
 
 文件读取相关，导出的模块分别在加载路由和文章目录中引用
 ```javascript

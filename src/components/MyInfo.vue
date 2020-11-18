@@ -8,8 +8,12 @@
 			<div>个人简介/肥宅一枚√</div>
     </div>
 		<div id="link">
-			<img src="@assets/img/bilibili.svg" alt="bilibili" >
+			<a href="https://space.bilibili.com/8096424" target="_blank">
+				<img src="@assets/img/bilibili.svg" alt="bilibili" >
+			</a>
+			<a href="https://github.com/DouMJun" target="_blank">
 			<img src="@assets/img/github.svg" alt="Gitgub">
+			</a>
 			<img src="@assets/img/zhihu.svg" alt="知乎">
 			<img src="@assets/img/email.svg" alt="Email">
 		</div>
@@ -59,6 +63,7 @@ export default {
     height: 100px;
 		border-top: solid rgba(187, 187, 187, 0.8) 1px;
 		border-bottom: solid rgba(187, 187, 187, 0.8) 1px;
+		padding: 10px;
   }
 	#intro div {
 		margin:0 auto;

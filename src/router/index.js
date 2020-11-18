@@ -14,7 +14,6 @@ import test from '@assets/artical/test.md'
 
 Vue.use(VueRouter)
 
-console.log(Main)
 
 
 
@@ -26,9 +25,9 @@ const routes = [
     name: 'Main',
     component: Main,
     children: [
-      {path: '',component: Blog},
-      {path: 'blog',component: Blog,children: children},
-      {path: 'daily',component: Daily},
+      {path: '',redirect: 'blog'},
+      {path: 'blog',component: Blog, children: children},
+      {path: 'daily',component: Daily, children: children},
       {path: 'special',component: Special},
       {path: 'archive',component: Archive},
       {path: 'comment',component: Comment},
