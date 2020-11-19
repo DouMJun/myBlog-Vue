@@ -52,10 +52,28 @@ function getTitle(html) {
     return ''
   }
 }
-module.exports = function(src) {
 
-  const html = md.render(`${src}`)
-  const title = getTitle(html);
+function setDoc(html) {
+  var reg = /<h2>([\s\S]*?)<\/h2>/g
+  var sidebar = []
+  html = html.replace(reg, (str, content) => {
+    sidebar.push("'"+content+"'")
+    return `<h2 id='${content}'>
+      <a href="#${content}"/>
+      ${content}
+      </h2>`
+  })
+  return {html:html, sidebar: sidebar}
+}
+
+module.exports = function(src) {
+  var sidebar = []
+  var html = md.render(`${src}`)
+  const title = getTitle(html)
+
+  let obj = setDoc(html)
+  html = obj.html
+  sidebar = obj.sidebar
   return (
     `<template>\n
       <div id="write">
@@ -66,7 +84,8 @@ module.exports = function(src) {
     <script>
     export default {
       data: {
-        title: "${title}"
+        title: "${title}",
+        sidebar: [${sidebar}]
       }
     }
     </script>

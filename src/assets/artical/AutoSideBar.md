@@ -1,6 +1,3 @@
----
-sidebarDepth: 2
----
 
 
 # 自动修改侧边栏的工具AutoSideBar()

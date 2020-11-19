@@ -14,18 +14,20 @@ files.keys().forEach((item, index) => {
   let time = {}
   let path = item.slice(2, -3)
   let component = files(files.keys()[index]).default
-  let title = component.data.title
+
   let timeCom = 0
   routeItem.path = path
   routeItem.component = component
+
   timeCom = Time[index].timeCom
   time = Time[index].time
 
   articalInfo.timeCom = timeCom
-  articalInfo.title = title
+  articalInfo.title = component.data.title
   articalInfo.path = path
   articalInfo.time = time
-
+  articalInfo.sidebar = component.data.sidebar
+  
   articalLists.push(articalInfo)
   children.push(routeItem)
 })

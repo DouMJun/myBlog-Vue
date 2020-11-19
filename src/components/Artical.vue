@@ -46,7 +46,6 @@ export default {
   methods: {
     back() {
       this.$router.replace(this.path)
-      console.log(typeof this.path)
     },
     itemClick(key) {
       this.$router.push(this.articalLists[key].path)
