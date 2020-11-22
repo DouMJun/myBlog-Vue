@@ -1,9 +1,11 @@
 <template>
   <div class="blog" >
     <ArticalSidebar
-    :list="getList"
-    v-show="showSidebar"/>
-    <Artical :path="'/blog/'"
+    :list="sidebarListCom"
+    v-show="showSidebar"
+    :class="{fix: isFixed}"/>
+    <Artical 
+    :path="'/blog/'"
     :articalLists="articalLists"
     >
     </Artical>
@@ -23,28 +25,50 @@ export default {
   },
   data() {
     return {
-      articalLists: articalLists
+      articalLists: articalLists,
+      showSidebar: false,
+      isFixed: false,
+      sidebarList: []
     }
   },
   created() {
-
+    window.addEventListener("scroll",this.ifFixed,true);
   },
-  computed: {
-    getList() {
-      for(let item of this.articalLists){
-        if(item.path === this.$route.path.replace(/\/[\s\S]*\//,'')){
-          return item.sidebar
-        }
-      }
-      return []
-    },
-    showSidebar(){
-      return this.getList !== []
+  methods: {
+    ifFixed() {
+      let that = this;
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      this.isFixed = scrollTop>250-70
     }
   },
-  
+  computed: {
+    sidebarListCom() {
+      return this.sidebarList
+    }
+  },
+  updated(){
+
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.sidebarList = [];
+    for(let item of this.articalLists){
+      (item.path === to.path.replace(/\/[\s\S]*\//,''))&&(this.sidebarList = item.sidebar)
+    }
+    this.showSidebar = (this.sidebarList.length !== 0)
+    next()
+  },
+  destroyed(){
+    window.addEventListener("scroll",this.ifFixed);
+  }
 }
 </script>
 
 <style scoped>
+.blog{
+  position: relative;
+}
+.fix {
+  position: fixed;
+  top: 70px;
+}
 </style>
