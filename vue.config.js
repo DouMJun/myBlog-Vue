@@ -1,11 +1,14 @@
 const path = require('path');
-
+var GetFileMakeTime = require("./src/plugins/GetFileMakeTime")
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+
+
 module.exports = {
   lintOnSave: true,
-  publicPath: "./",
+  publicPath: "/myblog",
+  outputDir:"myblog",
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('src'))
@@ -23,5 +26,12 @@ module.exports = {
       .use('./markdownLoader')
       .loader('./markdownLoader')
       .end()
-  },
-};
+    },
+    configureWebpack: {
+      // outputDir:'42.192.44.81/myblog',
+      plugins: [
+        new GetFileMakeTime()
+      ]
+    }
+
+}

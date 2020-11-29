@@ -5,7 +5,7 @@
     v-show="showSidebar"
     :class="{fix: isFixed}"/>
     <Artical 
-    :path="'/blog/'"
+    :path="'/main/blog/'"
     :articalLists="articalLists"
     >
     </Artical>
@@ -43,18 +43,25 @@ export default {
   },
   computed: {
     sidebarListCom() {
+      this.sidebarList = [];
+    for(let item of this.articalLists){
+      (item.path === this.$route.path.replace(/\/[\s\S]*\//,''))&&(this.sidebarList = item.sidebar)
+    }
+    this.showSidebar = (this.sidebarList.length !== 0)
       return this.sidebarList
     }
   },
-  updated(){
-
-  },
   beforeRouteUpdate(to, from, next) {
-    this.sidebarList = [];
-    for(let item of this.articalLists){
-      (item.path === to.path.replace(/\/[\s\S]*\//,''))&&(this.sidebarList = item.sidebar)
-    }
-    this.showSidebar = (this.sidebarList.length !== 0)
+      let  _that = this;
+      let backTop = requestAnimationFrame(function fn() {
+              if(document.documentElement.scrollTop > 0){
+                document.documentElement.scrollTop -= Math.max((document.documentElement.scrollTop)/10,50);
+                document.body.scrollTop = document.documentElement.scrollTop ;    
+                backTop = requestAnimationFrame(fn);
+              } else {
+                cancelAnimationFrame(backTop);
+              }
+            });
     next()
   },
   destroyed(){

@@ -1,7 +1,7 @@
 const files = require.context('@assets/artical/', false, /\.md$/)
-import Time from "@assets/time.js"
 
-const test = require('@assets/artical/')
+
+import Time from "@assets/time"
 
 const componentLists = []
 const children = []

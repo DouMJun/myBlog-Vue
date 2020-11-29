@@ -1,12 +1,9 @@
 const marked = require("marked");
 const renderer = new marked.Renderer();
 
-return {
-  module: {
-    // node: {
-    //   fs:'empty'
-    // },
-    publicPath: './',
+
+module.exports = {
+    publicPath: '42.192.44.81/myblog',
     rules: [{
       test: /\.md$/,
       use: [
@@ -16,6 +13,8 @@ return {
         },
        
       ]
-    }]
+    }],
+    plugins:[
+      new GetFileMakeTime({options: true})
+    ]
   }
-}

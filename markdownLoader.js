@@ -2,7 +2,7 @@
 
 const MarkdownIt = require('markdown-it')
 const hljs = require('highlight.js')
-
+// const time = require('./getTime')
 const md = new MarkdownIt({
   html: true,
   linkify: true,

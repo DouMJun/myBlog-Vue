@@ -36,7 +36,6 @@ export default {
     },
     show(){
       this.isShow = document.documentElement.scrollTop > this.showHeight
-      console.log(this.isShow)
     }
   },
   computed: {

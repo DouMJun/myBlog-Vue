@@ -2,10 +2,13 @@
   <div class="Main">
     <NavBar />
     <div class="content">
-      <div id="block"></div>
+      <div id="block"
+      v-show="infoShow"></div>
       <router-view/>
       <MyInfo
-      class="myinfo"/>
+      class="myinfo"
+      v-show="infoShow"
+      />
     </div>
     <BackTop/>
   </div>
@@ -21,16 +24,21 @@ export default {
     NavBar,
     MyInfo,
     BackTop
+  },
+  computed: {
+    infoShow() {
+      return this.$route.path === '/main/blog/'
+    }
   }
 
 }
 </script>
 
 <style scoped>
-.Main{
-  background:url('../../assets/img/bgc.png') no-repeat;
-  background-size:100% ;
-}
+  .Main{
+    background:url('../../assets/img/bgc.png') no-repeat;
+    background-size:100% ;
+  }
   .content {
     margin-top: 200px;
     display: flex;

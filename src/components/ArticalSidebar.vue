@@ -7,7 +7,6 @@
     >
       {{item}}
     </li>
-    
   </div>
 </template>
 
@@ -89,5 +88,8 @@ export default {
   }
   .doc {
     height: 2rem;
+  }
+  .active{
+    color: chocolate;
   }
 </style>
