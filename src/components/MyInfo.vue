@@ -1,5 +1,5 @@
 <template>
-  <div class="my-info">
+  <div class="my-info" v-if="isMobile">
     <div id="head-portrait">
 			<img src="@assets/img/head.jpg" alt="">
 		</div>
@@ -23,7 +23,12 @@
 
 <script>
 export default {
-  name: 'MyInfo'
+	name: 'MyInfo',
+	computed: {
+		isMobile() {
+			return window.screen.width > 980
+		}
+	}
 }
 </script>
 

@@ -24,7 +24,7 @@ const routes = [
     name: 'Main',
     component: Main,
     children: [
-      {path: '/',redirect: 'home/'},
+      {path: '/',redirect: 'home'},
       {path: 'blog',name: 'blog',component: Blog, children: children},
       //{path: 'daily',component: Daily, children: children},
       {path: 'special',component: Special},
@@ -45,7 +45,7 @@ const routes = [
 
   {
     path:'/',
-    redirect: '/main/'
+    redirect: '/main/home'
   }
   
 ]

@@ -36,4 +36,10 @@ export default {
   li {
     line-height: 2em;
   }
+  @media screen and (max-width: 980px)  {
+    .aboutme {
+      width: 100vw;
+      padding:10px 10px;
+    }
+  }
 </style>

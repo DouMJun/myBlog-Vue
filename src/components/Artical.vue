@@ -96,7 +96,12 @@ export default {
     box-shadow:  2px 2px 2px #dfdfdf, 
              -2px -2px 2px#ffffff;
   }
-
+  @media screen and (max-width: 980px)  {
+    .blog {
+      width: 100vw;
+      padding:10px 10px;
+    }
+  }
 
 
 </style>

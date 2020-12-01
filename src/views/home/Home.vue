@@ -33,6 +33,7 @@ export default {
     position: absolute;
     z-index: 1;
   }
+ 
   h1 {
     width: 20rem;
     display: inline-block;
@@ -64,12 +65,21 @@ export default {
    justify-content: center;
    align-items: center;
  }
- .bgc {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100vh;
-   z-index: 0;
- }
+  .bgc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+  @media screen and (max-width: 980px) {
+    .home{
+      background-color: #fff;
+      
+    }
+    .intro {
+      color: black;
+    }
+  }
 </style>
