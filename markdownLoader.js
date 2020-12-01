@@ -66,7 +66,17 @@ function setDoc(html) {
   return {html:html, sidebar: sidebar}
 }
 
+function getDigest(md) {
+  var reg = /([\s\S]*?)<!--more-->/
+  let digest = md.match(reg)
+
+  if(digest){
+    console.log(digest[1])
+  }
+  
+}
 module.exports = function(src) {
+  getDigest(src)
   var sidebar = []
   var html = md.render(`${src}`)
   const title = getTitle(html)

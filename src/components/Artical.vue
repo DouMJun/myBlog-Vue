@@ -69,7 +69,7 @@ export default {
     padding:20px 20px 10px;
     border-radius: 20px;
 
-    box-shadow:0px 4px 9px grey;;
+    box-shadow:0px 4px 9px grey;
   }
   
   .return {

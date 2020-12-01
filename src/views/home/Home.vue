@@ -4,7 +4,6 @@
       <h1>欢迎访问</h1>
       <div class="enter" @click="enter">进入博客</div>
     </div>
-
   </div>
 </template>
 
@@ -16,14 +15,23 @@ export default {
   methods: {
     enter() {
       console.log(this.$route)
-      this.$router.replace('/main/')
+      this.$router.replace('/main/blog/')
     }
   }
 }
 </script>
 <style scoped>
   .home {
+    margin-top: -200px;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/src/assets/img/homeBgc.jpg');
+    background-size:100% ;
+    background-attachment: fixed;
 
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
   }
   h1 {
     width: 20rem;
@@ -31,14 +39,18 @@ export default {
     text-align: center;
   }
   .intro {
-    margin: 10rem auto;
-    width: 15rem;
-    background-color: rgb(248, 106, 106);
-
+    position: relative;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: 200px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    color: aliceblue;
+    z-index: 1;
   }
  .enter {
    height: 3rem;
@@ -51,5 +63,13 @@ export default {
    display: flex;
    justify-content: center;
    align-items: center;
+ }
+ .bgc {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   z-index: 0;
  }
 </style>

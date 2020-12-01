@@ -1,7 +1,7 @@
 <template>
   <div class="nav-bar">
     <!-- <div class="content"> -->
-      <router-link to="/home/" tag="div" class="item">首页</router-link>
+      <router-link to="/main/home/" tag="div" class="item">首页</router-link>
       <router-link to="/main/blog/" tag="div" class="item">博客</router-link>
       <!-- <router-link to="/daily/" tag="div">日常</router-link> -->
       <!-- <router-link to="/special/" tag="div" class="item">特别</router-link>
@@ -36,7 +36,7 @@ export default {
     height: 50px;
     background-color: rgba(255, 255, 255, .5);
     color: white;
-
+    position: inherit;
     box-shadow:1px 1px 5px lightslategray;
   }
 

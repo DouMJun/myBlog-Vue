@@ -9,10 +9,14 @@
     :articalLists="articalLists"
     >
     </Artical>
+    <MyInfo
+      class="myinfo"
+    />
   </div>
 </template>
 
 <script>
+import MyInfo from '@components/MyInfo'
 import Artical from '@components/Artical'
 import {articalLists} from '@/ultis/fileAPI'
 import ArticalSidebar from '@components/ArticalSidebar'
@@ -21,7 +25,8 @@ export default {
   name: 'Blog',
   components: {
     Artical,
-    ArticalSidebar
+    ArticalSidebar,
+    MyInfo
   },
   data() {
     return {

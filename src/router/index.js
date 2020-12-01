@@ -10,7 +10,6 @@ const Comment = () => import('@views/comment/Comment')
 const AboutMe = () => import('@views/aboutme/AboutMe')
 const Home = () => import('@views/home/Home')
 import {children} from '@/ultis/fileAPI'
-import test from '@assets/artical/test.md'
 
 Vue.use(VueRouter)
 
@@ -25,27 +24,28 @@ const routes = [
     name: 'Main',
     component: Main,
     children: [
-      {path: '/',redirect: 'blog/'},
-      {path: 'blog',component: Blog, children: children},
+      {path: '/',redirect: 'home/'},
+      {path: 'blog',name: 'blog',component: Blog, children: children},
       //{path: 'daily',component: Daily, children: children},
       {path: 'special',component: Special},
       {path: 'archive',component: Archive},
       {path: 'comment',component: Comment},
       {
         path: 'aboutme',
+        name: 'aboutme',
         component: AboutMe
+      },
+      {
+        path: 'home',
+        name: 'home',
+        component: Home,
       },
     ]
   },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home,
-  },
- 
+
   {
     path:'/',
-    redirect: '/home/'
+    redirect: '/main/'
   }
   
 ]

@@ -8,7 +8,7 @@
 
 ## 思路
 读取`/guide/`文件夹下的文件，文件夹名作为`title`属性,文件名去掉后缀后作为文章题目。因为Node.js还不是很熟悉，百度了一下`fs.readdirSync()`和`fs.lstatSync()`的用法，制作了一个勉强能用的版本。
-
+<!--more-->
 ## 代码
 
 ```javascript

@@ -32,9 +32,14 @@ export default {
     width: 300px;
     height: 400px;
     background-color: rgb(255, 255, 255);
-    margin: 0 10px;
+    margin-right: -310px;
     padding: 20px 20px;
     border-radius: 20px;
+
+		position: absolute;
+		right: 0;
+		top: 0;
+
 		box-shadow:0px 4px 9px rgb(208, 204, 204);
 		display: flex;
 		flex-direction: column;
